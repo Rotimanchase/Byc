@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family: "jost", sans-serif;
+}
+.row{
+    margin: 0 !important;
+}
+
+.breadcrumb-item{
+    --bs-breadcrumb-divider: '>';
+}
+
+.form-control::placeholder{
+    color: red;
+    opacity: 1;
+}
+
+body{
+    font-family: 'jost';
+}
+
+.navbar-brand-center{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.custom-para{
+    text-align: justify;
+}
+
+.btn1{
+    padding: 15px 85px !important;
+    border-radius: 0 !important;
+}
+
+.btn2 button{
+    padding: 15px 30px;
+    border-radius: 0 !important;
+    gap: 20px !important;
+}
+
+.cards img{
+    width: 100%;
+}
+
+
+.form-control::placeholder {
+    color: white !important;
+    opacity: 1 !important;
+}
+
+.border-prod{
+    padding-top: 500px;
+}
+
+.submit-btn {
+    right: 15px;
+}
+
+
+.product-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.product-grid {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.product-card {
+    transition: transform 0.3s ease;
+}
+
+.btn-cart button{
+    padding: 12px 70px !important;
+}
+.btn-cart2 a{
+    padding: 12px 60px !important;
+}
+
+.btn-modi button{
+    padding: 12px 52px !important;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+@media(max-width: 992px) {
+    .navbar-brand-center{
+        position: static;
+        transform: none;
+    }
+    .product-grid {
+        grid-template-columns:  1fr;
+    }
+    .custom-para{
+        text-align: start;
+        font-size: small;
+        font-size: 14px !important;
+    }
+
+    .btn2 button{
+        padding: 7px 15px;
+        font-size: 12px;
+    }
+    .col-h3 h3{
+        font-size: 20px;
+    }
+    .arrow.btn :no-button{
+        display: none;
+    }
+    /* br{
+        display: none;
+    } */
+    
+    .home-card h1{
+        font-size: 20px;
+        padding-top: 2px !important;
+    }
+    .home-card p{
+        font-size: 14px !important;
+        margin-bottom: 1px !important;
+    }
+
+    .blog-foot small{
+        font-size: 10px !important;
+    }
+    .blog-foot h2{
+        font-size: 16px !important;
+    }
+    .blog-foot p{
+        font-size: 13px !important;
+    }
+
+    .blog-body p{
+        font-size: 14px !important;
+    }
+
+    .abou-body p{
+        font-size: 19px !important;
+    }
+
+    .byc-text p{
+        font-size: 13px;
+    }
+    .byc-card{
+        margin-bottom: 20px !important;
+    }
+    .byc-card button{
+        padding: 10px 40px !important;
+    }
+    .afri-p{
+        font-size: 24px !important;
+    }
+    .a-card h6{
+        font-size: 13px !important;
+        margin-left: 0px !important;
+    }
+    .a-card{
+        margin-top: 20px !important;
+    }
+    .box-cont img{
+        width: 40%;
+    }
+    .box-cont{
+        padding-left: 1px !important;
+        box-sizing: border-box;
+    }
+    .box-cont p{
+        font-size: 10px !important;
+    }
+    .big-card h5{
+        font-size: 10px !important;
+    }
+    .big-card p{
+        font-size: 10px;
+    }
+
+    .btn-cart button{
+        /* width: 100% !important; */
+        padding: 8px 28px !important;
+    }
+    .btn-cart2 a{
+        font-size: 10px !important;
+        padding: 8px 48px !important;
+        margin-top: 8px;
+    }
+
+    .btn-modi button{
+        padding: 7px 20px !important;
+        font-size: 10px !important;
+    }
+
+    .btn-modi2 button{
+        font-size: 10px !important;
+        padding: 7px 20px !important;
+        width: 100% !important;
+    }
+    .btn-modi2 img{
+        width: 10% !important;
+    }
+    .modi-arrow {
+        display: none;
+    }
+    .star, .num, .rang{
+        display: none;
+    }
+    .last-all h5{
+        font-size: 12px;
+    }
+    .last-all p{
+        font-size: 12px;
+    }
+    .last-all {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .pro-rate p {
+        font-size: 12px;
+    }
+
+    .create-btn button{
+        font-size: 10px !important;
+    }
+    .create-btn button{
+        margin-top: -150px !important;
+    }
+    
+}
