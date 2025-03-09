@@ -35,7 +35,7 @@ const SortBtn = ({ defaultSort = "Most Sold" }) => {
           </svg>
         </div>
       </button>
-      {/* <ul className="dropdown-menu shadow-sm" aria-labelledby="dropdownMenuButton">
+      <ul className="dropdown-menu shadow-sm" aria-labelledby="dropdownMenuButton">
         {sortOptions.map((option) => (
           <li key={option}>
             <a 
@@ -49,7 +49,7 @@ const SortBtn = ({ defaultSort = "Most Sold" }) => {
             </a>
           </li>
         ))}
-      </ul> */}
+      </ul>
     </div>
   );
 };

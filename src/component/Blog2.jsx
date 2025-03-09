@@ -1,5 +1,4 @@
 import React from 'react'
-import Breadcrumb from './Breadcrumb'
 import '../style.css' 
 import { blog2 } from '../assets'
 import Blogfoot from './Blogfoot'
@@ -9,7 +8,14 @@ import Breadcrumbs from './Breadcrumbs'
 const Blog2 = () => {
   return (
     <>
-      <Breadcrumbs/>
+      <nav aria-label="breadcrumb">
+        <ol className="breadcrumb py-5 ms-5">
+            <li className="breadcrumb-item bd-item"><a href="/">Home</a></li>
+            <li className="breadcrumb-item bd-item active" aria-current="page">Blogs</li>
+        </ol>
+        </nav>
+
+
       <div className="container-fluid">
         <div className="text-center">
           <h1 className="display-5 fw-bold py-5">How important are shoes in your style?</h1>

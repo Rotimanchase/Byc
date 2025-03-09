@@ -7,7 +7,7 @@ const Carts = () => {
   return (
     <>
       <div className="container-fluid">
-        <div className="border border-muted border-2 pe-5 ps-5 rounded-3 mx-5 ">
+        <div className="border border-muted border-2 px-5 my-5 rounded-3 mx-5 ">
           <h4 className='fw-bold py-4'>Cart 1 item(s)</h4>
 
           <div className=" border-top border-bottom border-2 border-muted pt-5 pb-3">
@@ -53,8 +53,8 @@ const Carts = () => {
               </div>
 
               <div className="d-lg-flex gap-4 pt-5 btn-cart2">
-                  <a class="btn fw-light border-1 border border-danger text-danger  btn-light" href="product" role="button">Continue Shopping</a>
-                  <a class="btn fw-light fs-6  btn-danger" href="checkout" role="button">Proceed to Checkout</a>
+                  <a className="btn fw-light border-1 border border-danger text-danger  btn-light" href="product" role="button">Continue Shopping</a>
+                  <a className="btn fw-light fs-6  btn-danger" href="checkout" role="button">Proceed to Checkout</a>
                 </div>
             </div>
           </div>

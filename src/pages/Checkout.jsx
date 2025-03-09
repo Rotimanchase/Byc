@@ -21,7 +21,7 @@ const Checkout = () => {
                 <p className='lead pb-2'>Quantity: <span className='ms-4'>1</span></p>
                 <div className="d-lg-flex gap-3 mb-5  btn-cart2 ">
                     {/* <button className='btn border border-danger fw-lighter fs-6 mt-2 bg-white rounded-3 border-1 outline-0 text-danger'><img className='img-fluid me-2' src={wishlove} alt="" />Wishlist</button> */}
-                    <a style={{fontSize: "13px", padding: "15px 70px"}} class="btn fw-light btn-danger" href="Modifycart" role="button">MODIFY CART</a>
+                    <a style={{fontSize: "13px", padding: "15px 70px"}} className="btn fw-light btn-danger" href="Modifycart" role="button">MODIFY CART</a>
                     {/* <a href='Modifycart' role='button'  className='btn border-0 bg-danger fw-lighter fs-6 rounded-3 mt-2 outline-0 text-white'>MODIFY CART</a> */}
                 </div>
                 </div>

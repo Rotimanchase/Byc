@@ -6,6 +6,14 @@ const Contact = () => {
   return (
     <>
       <div className="container-fluid">
+      <nav aria-label="breadcrumb">
+        <ol className="breadcrumb py-5 ms-5">
+            <li className="breadcrumb-item bd-item"><a href="/">Home</a></li>
+            <li className="breadcrumb-item bd-item active" aria-current="page">Contact Us</li>
+        </ol>
+        </nav>
+
+
         <div className="text-center">
           <h1 className="display-4 fw-bold py-5">CONTACT US</h1>
         </div>

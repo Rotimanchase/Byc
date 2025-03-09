@@ -12,7 +12,7 @@ const Recentlyview = () => {
                 <p className='text-danger mb-3 pt-5 me-4'>See all <img className='ms-3 img-fluid' src={redvec} alt="" /></p>
             </div>
 
-        <div class="product-grid gap-4 d-grid ps-4 pe-4 mb-3 border-top border-2">
+        <div className="product-grid gap-4 d-grid ps-4 pe-4 mb-3 border-top border-2">
             <div className="product-card rounded-3 mt-4">
                 <div className="product-image cards">
                     <img src={recent} alt="Men's Boxer"/>
@@ -22,7 +22,7 @@ const Recentlyview = () => {
                     <p className="product-code text-muted mb-2">BYC 1163</p>
                     <small className="product-description text-muted">Fashionable Men's Underwear Boxer<br/> Cotton Underwear 3 In 1</small>
                     <p className="product-price fw-bold mt-2 mb-2">₦1,900.00</p>
-                    <div classNameName="ratings pb-3">
+                    <div className="ratings pb-3">
                         <img src={star} alt="" />
                     </div>
                 </div>

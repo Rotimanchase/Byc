@@ -75,7 +75,16 @@ import mstar1 from './modstar1.png'
 import mstar2 from './modstar2.png'
 import mcart from './modcart.png'
 import snav from './serchnav.png'
+import bbox from './bluebox.png'
+import w2box from './wine2box.png'
+import w1box from './wine1box.png'
+import wvector from './white-vector.png'
+import wcart from './white-cart.png'
+import wheart from './white-heart.png'
+import wuser from './white-user.png'
+import modplus from './plus.png'
+import modminus from './minus.png'
 
-export{byc, mnum, mplus, msize, mstar1, snav, mstar2, bxs1, mrater, mrange, marrowl, marrowr, mboxers, mboxer,  checkpay, round1, round2, bxs2, wishlove, cboxer, cplus, cartdel, wishcart, bxs3, bxs4, bxs5, vector, heart, cart, user, pay, phone, mail, fb, insta, twi, yt, fleft,fmid, fright, sleft, smid, sright, ttr, tbl, tbr,
+export{byc, wvector, modplus, modminus, wcart, wheart, wuser, mnum, bbox, w2box, w1box, mplus, msize, mstar1, snav, mstar2, bxs1, mrater, mrange, marrowl, marrowr, mboxers, mboxer,  checkpay, round1, round2, bxs2, wishlove, cboxer, cplus, cartdel, wishcart, bxs3, bxs4, bxs5, vector, heart, cart, user, pay, phone, mail, fb, insta, twi, yt, fleft,fmid, fright, sleft, smid, sright, ttr, tbl, tbr,
      arrowleft, footarrow, recent, redvec, lcard, arrowright, pic1, pic2, pic3, lastl, firstimg, lastm, lastr, apic11, lpic, eye, lasth,
       larrow, bfirst, bsecond, address, mcart, phn, maile, conta, star, bfoot, b3, blog2, apic1, apic2}

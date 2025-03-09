@@ -22,7 +22,21 @@ const ViewToggle = () => {
           height="35"
           fill={activeView === 'list' ? 'black' : 'light'}>
           <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
+
+          <rect width="24" height="24" fill="#F5F5F5" rx="2" ry="2"/>
+          
+          {/* <!-- List Icon Elements with boxes same height as lines --> */}
+          <rect x="5" y="7" width="4" height="3" fill="#5F6368"/>
+          <rect x="5" y="12" width="4" height="3" fill="#5F6368"/>
+          <rect x="5" y="17" width="4" height="3" fill="#5F6368"/>
+          
+          {/* <!-- Lines beside squares - aligned with boxes --> */}
+          <rect x="12" y="7" width="7" height="3" fill="#5F6368"/>
+          <rect x="12" y="12" width="7" height="3" fill="#5F6368"/>
+          <rect x="12" y="17" width="7" height="3" fill="#5F6368"/>
         </svg>
+
+       
       </button>
       <button
         onClick={() => setActiveView('grid')}

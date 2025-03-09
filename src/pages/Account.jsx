@@ -3,27 +3,27 @@ import React from 'react'
 const Account = () => {
   return (
     <div>
-      <div className="border border-3 border-muted my-5 mx-5 py-5 rounded-3">
+      <div className="border border-1 border-muted my-5 mx-5 py-5 rounded-3">
         <div className="row ">
-            <div className="col-md-12 col-lg-6 border-end border-3 border-muted my-5">
+            <div className="col-md-12 col-lg-6 border-end border-2 border-muted my-5">
                 <div className="text-center ">
                     <h4 className='fw-bolder mb-5'>Login</h4>
                 </div>
-                <div className="py-3 ms-5 justify-content-center">
+                <div className="py-3 ms-md-5 justify-content-center">
                 <form className='mb-3 me-md-5' action="">
                     <label className='mb-2 fs-5 fw-light form-label' htmlFor="Phone">Email addres</label>
-                    <input className='w-100 form-control  border-danger rounded-2 p-3 border-1' type="email" name="email" id="" />
+                    <input className='w-100 form-control  border-danger rounded-2 p-3 border-1' type="email" name="email" id="email" />
                 </form>
 
                 <form className='mb-3 me-md-5' action="">
                     <label className='mb-2 fs-5 fw-light form-label' htmlFor="password">Password</label>
-                    <input className='w-100 form-control  border-danger rounded-2 p-3 border-1' type="password" name="Phone" id="" />
+                    <input className='w-100 form-control  border-danger rounded-2 p-3 border-1' type="password" name="Phone" id="phone" />
                 </form>
 
                 <div className="d-md-flex justify-content-between me-md-5">
                     <div className="d-flex gap-3">
                         <div className="inp">
-                         <input type="checkbox" style={{width: ""}} name="" id="" />
+                         <input type="checkbox" style={{width: ""}} name="" id="checkbox" />
                         </div>
                         <p className="mt-">Remember Me</p>
                     </div>

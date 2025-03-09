@@ -1,24 +1,108 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import star from 'react-bootstrap-icons'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import { marrowl, marrowr, mboxer, mboxers, mcart, mnum, mplus, mrange, mrater, msize, mstar1, mstar2, redvec, star, wishcart, wishlove } from '../assets'
+import { bbox, bxs1, bxs2, marrowl, marrowr, mboxer, mboxers, mcart, mnum, modminus, modplus, mplus, mrange, mrater, msize, mstar1, mstar2, redvec, star, w1box, w2box, wishcart, wishlove } from '../assets'
 import Recentlyview from '../component/Recentlyview'
 
-const Modifycart = () => {
+const Modifycart = ({basePrice=2800}) => {
+    const images = [
+        bbox,
+        w1box,
+        w2box,
+        bbox,
+        w1box,
+        bxs1,
+        bxs2,
+        bxs1,
+      ];
+
+      const [currentIndex, setCurrentIndex] = useState(0);
+      const [count, setCount] = useState(1);
+      const [totalPrice, setTotalPrice] = useState(basePrice);
+
+      const handlePrev = () => {
+          setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+      };
+  
+      const handleNext = () => {
+          setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+      };
+
+        const handleIncrease = () => {
+            setCount((prevCount) => {
+            const newCount = prevCount + 1;
+            setTotalPrice(newCount * basePrice);
+            return newCount;
+            });
+        };
+
+      const handleDecrease = () => {
+        if (count > 1) {
+          setCount((prevCount) => {
+            const newCount = prevCount - 1;
+            setTotalPrice(newCount * basePrice);
+            return newCount;
+          });
+        }
+      };    
+    
   return (
     <>
       <div className="container-fluid">
+      <nav aria-label="breadcrumb">
+        <ol className="breadcrumb py-5 ms-5">
+            <li className="breadcrumb-item bd-item"><a href="/">Home</a></li>
+            <li className="breadcrumb-item  bd-item">Men</li>
+            <li className="breadcrumb-item bd-item active text-danger" aria-current="page">Cart</li>
+        </ol>
+        </nav>
+
+
         <div className="border border-2 border-muted rounded-3 mx-5 my-5">
             <div className="row">
                 <div className="col-md-12 col-lg-5 py-5 ps-md-5">
-                    <div className='mb-5'>
-                        <img className='img-fluid' src={mboxer} alt="" />
+                    <div id="carousel" className="carousel slide text-center">
+                        {/* Main Image Display */}
+                        <div className="carousel-inner mb-3 ">
+                            <div className="carousel-item active d-flex justify-content-center">
+                                <img src={images[currentIndex]} className="d-block w-75 img-fluid" alt={`slide ${currentIndex + 1}`} />
+                            </div>
+                        </div>
+
+                        {/* Navigation Buttons + Thumbnails in the same row */}
+                        <div className="d-flex align-items-center justify-content-center mt-5">
+                            {/* Previous Button */}
+                            <button className="btn btn-secondary me-5" type="button" onClick={handlePrev}>
+                                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span className="visually-hidden">Previous</span>
+                            </button>
+
+                            {/* Thumbnails */}
+                            <div className="d-flex gap-2 thumbs">
+                                {images
+                                    .slice(currentIndex + 1, currentIndex + 5)
+                                    .concat(images.slice(0, Math.max(0, 4 - (images.length - currentIndex - 1)))) // Wrap-around thumbnails
+                                    .map((img, index) => (
+                                        <div key={index} className="col-auto">
+                                            <img
+                                                src={img}
+                                                className="img-fluid rounded"
+                                                style={{ width: "80px", height: "60px", cursor: "pointer" }}
+                                                alt={`thumbnail ${index}`}
+                                                onClick={() => setCurrentIndex((currentIndex + index + 1) % images.length)}
+                                            />
+                                        </div>
+                                    ))}
+                            </div>
+
+                            {/* Next Button */}
+                            <button className="btn btn-secondary ms-5" type="button" onClick={handleNext}>
+                                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span className="visually-hidden">Next</span>
+                            </button>
+                        </div>
                     </div>
-                    <div className="d-flex gap-2">
-                        <img className='img-fluid modi-arrow' src={marrowl} alt="" />
-                        <img className='img-fluid' src={mboxers} alt="" />
-                        <img className='img-fluid modi-arrow' src={marrowr} alt="" />
-                    </div>
+
                 </div>
                 <div className="col-md-12 col-lg-7 py-5 pe-md-5">
                     <h4 className="fw-bold pb-3">MEN BOXERS<br/> BYC 1166</h4>
@@ -29,13 +113,15 @@ const Modifycart = () => {
 
                     <div className="border-top border-muted border-3 me-md-5">
                         <div className="mt-5">
-                            <h4 className="fw-bold fs-3 mb-4">₦2,800.00</h4>
+                            <h4 className="fw-bold fs-3 mb-4">₦{totalPrice.toLocaleString()}.00</h4>
                             <img className='img-fluid w-50 mt-3' src={msize} alt="" />
                         </div>
 
-                        <div className="d-md-flex gap-3 mb-4 mt-4">
-                            <div className="mt-1">
-                             <img className='img-fluid' src={mplus} alt="" />
+                        <div className="d-md-flex gap- mb-4 mt-4">
+                            <div className="d-flex align-items-center ">
+                                <button className="btn btn-danger py-3 px-4 rounded-0 " onClick={handleDecrease}><img src={modminus} alt="" /></button>
+                                <input type="text" value={count} disabled className="form-control bg-white border-0 fs-5 text-center w-25" />
+                                <button className="btn btn-danger py-3 px-4 rounded-0" onClick={handleIncrease}><img src={modplus} alt="" /></button>
                             </div>
                             <div className="btn-modi">
                               <button className='border border-danger mt-2 bg-white rounded-3 border-1 outline-0 text-danger '><img className='img-fluid me-2' src={wishlove} alt="" />Wishlist</button>
@@ -102,11 +188,11 @@ const Modifycart = () => {
                     <div className="d-md-flex gap-4 mt-2 ">
                         <div className="img text-warning">
                             {/* <img className=' img-fluid' src={mstar2} alt="" /> */}
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i>
+                            <i className="bi bi-star-fill"></i>
+                            <i className="bi bi-star-fill"></i>
+                            <i className="bi bi-star-fill"></i>
+                            <i className="bi bi-star-fill"></i>
+                            <i className="bi bi-star-half"></i>
                         </div>
                         <p className='fw-light'>12-08-2021 by JAMES JOHN</p>
                     </div>
@@ -120,11 +206,11 @@ const Modifycart = () => {
                     <div className="d-md-flex gap-4 mt-2 ">
                         <div className="img text-warning">
                             {/* <img className=' img-fluid' src={mstar2} alt="" /> */}
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i>
+                            <i className="bi bi-star-fill"></i>
+                            <i className="bi bi-star-fill"></i>
+                            <i className="bi bi-star-fill"></i>
+                            <i className="bi bi-star-fill"></i>
+                            <i className="bi bi-star-half"></i>
                         </div>
                         <p className='fw-light'>12-08-2021 by JAMES JOHN</p>
                     </div>
@@ -138,11 +224,11 @@ const Modifycart = () => {
                     <div className="d-md-flex gap-4 mt-2 ">
                         <div className="img text-warning">
                             {/* <img className=' img-fluid' src={mstar2} alt="" /> */}
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i>
+                            <i className="bi bi-star-fill"></i>
+                            <i className="bi bi-star-fill"></i>
+                            <i className="bi bi-star-fill"></i>
+                            <i className="bi bi-star-fill"></i>
+                            <i className="bi bi-star-half"></i>
                         </div>
                         <p className='fw-light'>12-08-2021 by JAMES JOHN</p>
                     </div>

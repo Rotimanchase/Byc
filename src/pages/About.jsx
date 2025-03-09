@@ -8,9 +8,12 @@ import Recentlyview from '../component/Recentlyview'
 const About = () => {
   return (
     <>
-      <div className="col-10 ms-5 ps-3">
-        {/* <Breadcrumbs/> */}
-      </div>
+      <nav aria-label="breadcrumb">
+        <ol className="breadcrumb py-5 ms-5">
+            <li className="breadcrumb-item bd-item"><a href="/">Home</a></li>
+            <li className="breadcrumb-item bd-item active" aria-current="page">About Us</li>
+        </ol>
+        </nav>
 
       <div className="container-fluid">
         <div className="text-center py-5">

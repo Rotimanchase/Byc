@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Navbar from './component/Navbar';
 import Footer from './pages/Footer';
@@ -12,23 +12,26 @@ import Product from './component/Product'
 import Checkout from './pages/Checkout';
 import Modifycart from './pages/Modifycart';
 import Account from './pages/Account';
-import Searchnav from './component/Searchnav';
 import ViewToggle from './component/ViewToggle';
 import SortBtn from './component/SortBtn';
-import ProductCardG from './component/ProductCardsG';
+import Camsole from './pages/Camsole';
+import Boxers from './component/Boxers';
+import Wishlist from './pages/Wishlist';
 
 
 const Display = () => {
   return (
     <>
-      <BrowserRouter>
+      <Router>
         <Navbar/>
+        <div>
+          {/* <ReusableBreadCrumbs/> */}
         <Routes>
           <Route index element={<Home/>} />
-          <Route path='about' element={<About/>} />
-          <Route path='contact' element={<Contact/>}/>
+          <Route path='AboutUs' element={<About/>} />
+          <Route path='ContactUs' element={<Contact/>}/>
           <Route path='blog' element={<Blog/>}/>
-          <Route path='blog2' element={<Blog2/>}/>
+          <Route path='Blogs' element={<Blog2/>}/>
           <Route path='carts' element={<Carts/>}/>
           <Route path='product' element={<Product/>}/>
           <Route path='checkout' element={<Checkout/>}/>
@@ -36,11 +39,13 @@ const Display = () => {
           <Route path='account' element={<Account/>}/>
           <Route path='sortbtn' element={<SortBtn/>}/>
           <Route path='viewtoggle' element={<ViewToggle/>}/>
-          <Route path='productcardG' element={<ProductCardG/>}/>
-          <Route path='searchnav' element={<Searchnav/>}/>
+          <Route path='camsole' element={<Camsole/>}/>
+          <Route path='boxers' element={<Boxers/>}/>
+          <Route path='wishlist' element={<Wishlist/>}/>
         </Routes>
+        </div>
         <Footer/>
-      </BrowserRouter>
+      </Router>
     </>
   )
 }
